@@ -21,7 +21,7 @@ Both ETL and HTTP require Erlang  22, Rust, and a variety of dependencies. Let's
 $ wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
 $ sudo dpkg -i erlang-solutions_2.0_all.deb
 $ sudo apt-get update
-$ sudo apt install cmake libsodium-dev libssl-dev build-essential
+$ sudo apt install cmake libsodium-dev libssl-dev build-essential cargo 
 $ sudo apt install esl-erlang=1:22.3.4.1-1 
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
@@ -33,7 +33,7 @@ ETL uses PostgreSQL to store the data it gets from the blockchain in an easily q
 If you don't have PostgreSQL already installed and running, we'll need to install it:
 
 ```bash
-$ sudo apt-get install postgresql
+$ sudo apt-get install postgresql postgis
 ```
 
 We'll need to setup a new user and database for ETL to use. If you already have a user and know the credentials, you can skip this. Create a user called `etl` and give them superuser powers:
